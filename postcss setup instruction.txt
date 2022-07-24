@@ -1,0 +1,95 @@
+npm must have been installed in machine
+
+steps-1:
+open folder in vscode
+
+steps-2:
+ create a folder named----> .vscode
+inside folder create a file named ----> settings.json
+paste the following lines in settings.json file--->
+
+{
+  "css.validate": false,
+  "tailwindCSS.emmetCompletions": true
+}
+
+steps-3:
+ creat folder named ----> public
+inside that folder create a file named ----> index.html      [file where we will write html code]
+
+steps:4
+ creat folder named ----> src
+inside folder create a file named ----> input.css
+paste the following lines in input.css file--->
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+steps:5
+under folder postcss (root folder) create a file named ----> postcss.config.js
+
+paste the following lines in postcss.config.js file--->
+
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  }
+}
+
+steps:6
+go to terminal and run following command
+
+npm init -y
+
+steps:7
+go to terminal and run following command
+
+npm install -D tailwindcss postcss-cli autoprefixer
+
+npx tailwindcss init
+
+
+
+
+steps: 8 
+last command of steps-7 will create a file named----> tailwind.config.js
+
+paste the following lines in tailwind.config.js file---> [public is the folder where our index.html(or other html files) file
+is located]
+
+                         
+module.exports = {
+  content: ["./public/**/*.html"],                  
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+
+steps: 9
+open file package.json
+in that file replace "scripts:" {} with the following line
+
+
+"scripts": {
+    "build": "postcss ./src/input.css -o ./public/styles.css --watch"
+  },
+
+
+steps:10 go to terminal and run following command
+
+npm run build
+
+steps:11
+in pulic folder where index.html file is locate--->open it
+link style sheet with the following link tag
+
+<link rel="stylesheet" href="./styles.css"/>
+
+
+
+enjoy tailwinding!!!
