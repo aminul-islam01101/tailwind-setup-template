@@ -1,0 +1,4 @@
+1.open the folder in vs code
+2.run the following codes in terminal
+yarn
+yarn dev
