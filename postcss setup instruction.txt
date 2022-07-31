@@ -93,3 +93,18 @@ link style sheet with the following link tag
 
 
 enjoy tailwinding!!!
+
+for prettier class rearranging
+
+in terminal (root file)
+
+npm install -D prettier prettier-plugin-tailwindcss
+
+and create a file named      prettier.config.js
+
+inside file paste
+
+module.exports = {
+  plugins: [require('prettier-plugin-tailwindcss')],
+}
+
